@@ -4,14 +4,14 @@ A dated index of what I have contributed around [FLOP](https://flop.finance) and
 
 I am [@tatthang](https://x.com/tatthang) on X and [thangvmt](https://github.com/thangvmt) on GitHub. This is a personal record. It is not affiliated with or endorsed by Flop Labs, and nothing in it is a claim about rewards or eligibility.
 
-All dates are UTC; statuses checked on **2026-10-21**. Issues move, so the link is the source of truth.
+All dates are UTC; statuses checked on **2026-10-26**. Issues move, so the link is the source of truth.
 
 ## Specification feedback: `flop-labs/yellowpaper`
 
 | Opened | Item | Status | What it is |
 |---|---|---|---|
 | 2026-10-19 | [#172](https://github.com/flop-labs/yellowpaper/issues/172) | open | Reports a settled devnet gateway session whose channel agent differed from the enrolled wallet, and asks which account receives R8.4 credit. Other contributors have since pointed to the open spec items (E.38, E.40) and to the unlock rules (R8.7, R8.8) that tie Agent grant unlock to the account funding the channel. |
-| 2026-10-19 | [#171](https://github.com/flop-labs/yellowpaper/issues/171) | open | The docs FAQ said nothing is burned anywhere, while Appendix A and the devnet runtime burned 10% of the inclusion fee. The hosted Yellow Paper has since adopted zero burn (D-0529), as other contributors noted on the thread. |
+| 2026-10-19 | [#171](https://github.com/flop-labs/yellowpaper/issues/171) | closed (completed) | The docs FAQ said nothing is burned anywhere, while Appendix A and the devnet runtime burned 10% of the inclusion fee. The hosted Yellow Paper has since adopted zero burn (D-0529), as other contributors noted on the thread. Closed on 2026-10-26: the 0.5.0 (draft) sync sets the fee burn to 0% and the validator page was corrected. |
 | 2026-10-07 | [#128](https://github.com/flop-labs/yellowpaper/issues/128) | open | The validator hardware profile in §15.3 and on the testnet page disagree (RAM, ECC, storage floor). |
 
 ## Service and protocol: `flop-labs/technocore-chat` and `flop-labs/tclk`
