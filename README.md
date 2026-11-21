@@ -1,18 +1,24 @@
 # FLOP contributions
 
-A dated index of what I have contributed around [FLOP](https://flop.finance) and [Technocore](https://technocore.chat): specification feedback, service issues, measurements, contest entries and writing. Every item is a link to the original, so anything here can be checked at the source.
+A dated index of what I have contributed around [FLOP](https://flop.finance) and [Technocore](https://technocore.chat): specification feedback, documentation issues, service issues, tools, measurements, contest entries and writing. Every item is a link to the original, so anything here can be checked at the source.
 
 I am [@tatthang](https://x.com/tatthang) on X and [thangvmt](https://github.com/thangvmt) on GitHub. This is a personal record. It is not affiliated with or endorsed by Flop Labs, and nothing in it is a claim about rewards or eligibility.
 
-All dates are UTC; statuses checked on **2026-10-26**. Issues move, so the link is the source of truth.
+All dates are UTC; statuses checked on **2026-11-21**. Issues move, so the link is the source of truth.
 
 ## Specification feedback: `flop-labs/yellowpaper`
 
 | Opened | Item | Status | What it is |
 |---|---|---|---|
-| 2026-10-19 | [#172](https://github.com/flop-labs/yellowpaper/issues/172) | open | Reports a settled devnet gateway session whose channel agent differed from the enrolled wallet, and asks which account receives R8.4 credit. Other contributors have since pointed to the open spec items (E.38, E.40) and to the unlock rules (R8.7, R8.8) that tie Agent grant unlock to the account funding the channel. |
+| 2026-10-19 | [#172](https://github.com/flop-labs/yellowpaper/issues/172) | open | Reports a settled devnet gateway session whose channel agent differed from the enrolled wallet, and asks which account receives R8.4 credit. Added a devnet [follow-up](https://github.com/flop-labs/yellowpaper/issues/172#issuecomment-6386084425) on 2026-10-24 verifying a self-funded direct channel and asking how an independent agent locates a miner endpoint (`31` comments as of 2026-11-21). |
 | 2026-10-19 | [#171](https://github.com/flop-labs/yellowpaper/issues/171) | closed (completed) | The docs FAQ said nothing is burned anywhere, while Appendix A and the devnet runtime burned 10% of the inclusion fee. The hosted Yellow Paper has since adopted zero burn (D-0529), as other contributors noted on the thread. Closed on 2026-10-26: the 0.5.0 (draft) sync sets the fee burn to 0% and the validator page was corrected. |
-| 2026-10-07 | [#128](https://github.com/flop-labs/yellowpaper/issues/128) | open | The validator hardware profile in §15.3 and on the testnet page disagree (RAM, ECC, storage floor). |
+| 2026-10-07 | [#128](https://github.com/flop-labs/yellowpaper/issues/128) | open | The validator hardware profile in §15.3 and on the testnet page disagree (RAM, ECC, storage floor). Subsequent comments quantified the RAM discrepancy (`2x`) and noted a third hardware profile in `run-validator` (2026-11-04). |
+
+## Documentation and network feedback: `flop-labs/network`
+
+| Opened | Item | Status | What it is |
+|---|---|---|---|
+| 2026-11-21 | [#498](https://github.com/flop-labs/network/issues/498) | open | Flags a discrepancy between two 2026-11-18 docs FAQs on builder rewards: the Technology FAQ states there is no grants programme or token allocation for builders, while the Tokenomics FAQ describes discretionary buckets for demand-bringing connectors and an ecosystem reserve covering builder programmes. |
 
 ## Service and protocol: `flop-labs/technocore-chat` and `flop-labs/tclk`
 
@@ -20,13 +26,14 @@ All dates are UTC; statuses checked on **2026-10-26**. Issues move, so the link 
 |---|---|---|---|
 | 2026-09-04 | [tclk#89](https://github.com/flop-labs/tclk/issues/89) | open | Board counts by the `tclk1 ` prefix ran about 38% high in the reported sample, because one fleet emitted a dialect the decoder rejects. |
 | 2026-09-04 | [tclk PR #94](https://github.com/flop-labs/tclk/pull/94) | closed (not merged) | Proposed a transcript-gap diagnostic; closed, not merged, at my suggestion in favour of #97. |
-| 2026-08-30 | [technocore-chat#565](https://github.com/flop-labs/technocore-chat/issues/565) | closed | `?since=` past the head was echoed back and printed as `next:`. |
+| 2026-08-30 | [technocore-chat#565](https://github.com/flop-labs/technocore-chat/issues/565) | closed (completed) | `?since=` past the head was echoed back and printed as `next:`. |
 | 2026-08-27 | [technocore-chat PR #384](https://github.com/flop-labs/technocore-chat/pull/384) | closed (not merged) | Docs: `first_seq` above `since+1` does not mean the ring dropped anything. Closed as a duplicate of #974; the maintainer quoted its causation wording in a comment on that PR. |
 | 2026-08-25 | [technocore-chat#199](https://github.com/flop-labs/technocore-chat/issues/199) | open | Measuring the `did/` namespace at its cap: about 4% of slots could not answer a DID lookup in the reported sample. |
 
-## Measurements
+## Tools and measurements
 
-- [thangvmt/technocore-measured](https://github.com/thangvmt/technocore-measured): dated measurements of technocore.chat with reproduction scripts and stated limits. A scheduled job updates its watch snapshots; historical measurements retain their original dates. Listed in [zunmax/awesome-technocore](https://github.com/zunmax/awesome-technocore), and proposed for [pucedoteth/awesome-technocore-verified](https://github.com/pucedoteth/awesome-technocore-verified/pull/1).
+- [FLOP Wallet & Channel Doctor](https://flop-doctor.vercel.app/) (released 2026-11-11, [post](https://x.com/tatthang/status/2120504011728331072)): a read-only browser tool (no private keys, no API tokens, no backend server) that cross-checks the devnet explorer against Substrate RPC for any SS58 wallet, miner, or channel ID to separate verified settled spend, timed-out auto-refunds, and unacknowledged on-chain locks. The live storage decoder currently covers devnet runtime specs `1014014-1014020`.
+- [thangvmt/technocore-measured](https://github.com/thangvmt/technocore-measured): dated measurements of technocore.chat with reproduction scripts and stated limits. A scheduled job updates its watch snapshots (latest watch commit on 2026-11-21); historical measurements retain their original dates. Listed in [zunmax/awesome-technocore](https://github.com/zunmax/awesome-technocore), and proposed for [pucedoteth/awesome-technocore-verified](https://github.com/pucedoteth/awesome-technocore-verified/pull/1) (still open).
 
 ## Contests
 
@@ -41,6 +48,11 @@ Historical posts, reflecting the information and my understanding at publication
 
 | Date | Post | About |
 |---|---|---|
+| 2026-11-17 | [article](https://x.com/tatthang/status/2122494392410034546) | The FLOP Airdrop Playbook: Setting Up Your AI Agent in 3 Minutes — a 4-step FLOP CLI 0.5.0 setup walkthrough with screenshots ahead of the targeted November 24 testnet (with follow-up resource links including Wallet & Channel Doctor in a [reply](https://x.com/tatthang/status/2122495469205287259)). |
+| 2026-11-11 | [link](https://x.com/tatthang/status/2120504011728331072) | Devnet channel breakdown after 8 days (25,203 opened, 7,052 settled / 28%, 18,151 timed out, refunded, or still open), explaining silent auto-refunds and 404 on-chain locks, alongside releasing the read-only [FLOP Wallet & Channel Doctor](https://flop-doctor.vercel.app/). |
+| 2026-11-03 | [link](https://x.com/tatthang/status/2117547103933108529) | End-to-end public devnet sandbox check: laptop CLI and public MCP setup without Docker, faucet downtime blocking API-key activation, and hosted gateway sessions logging 211 of 310 runs under one shared account. |
+| 2026-10-28 | [link](https://x.com/tatthang/status/2115298870599237794) | 12-part step-by-step thread on preparing an AI agent with the official FLOP CLI ahead of the earlier November 3 testnet target, with each command tested before posting. |
+| 2026-10-20 | [link](https://x.com/tatthang/status/2112503102373007749) | Why private-credit GPU financing bottlenecks AI compute, and how FLOP pays hardware owners directly through block rewards and inference fees. |
 | 2026-10-19 | [link](https://x.com/tatthang/status/2112139226011865225) | My post on the provisional November 3 testnet date and launch timeline, citing FLOP's docs FAQ ([source](https://docs.flop.network/docs/testnet-and-timeline), updated 2026-10-16). |
 | 2026-10-13 | [link](https://x.com/tatthang/status/2109997063362806268) | How the 4.4B testnet airdrop splits across miners, validators, agents and the ecosystem reserve. |
 | 2026-10-12 | [link](https://x.com/tatthang/status/2109777289991123291) | What the 25% testnet allocation means, from the CSO's answers at the launch event. |
