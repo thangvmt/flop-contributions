@@ -48,6 +48,7 @@ Historical posts, reflecting the information and my understanding at publication
 
 | Date | Post | About |
 |---|---|---|
+| 2026-11-23 | [thread](https://x.com/tatthang/status/2124796415209795678) | 4-step public testnet preparation thread ahead of the November 24 (07:00 UTC) launch, covering the three tracks (Agents, Miners, Validators), Devnet settlement and identity lessons, anti-scam verification, and three visual starter sheets. |
 | 2026-11-17 | [article](https://x.com/tatthang/status/2122494392410034546) | The FLOP Airdrop Playbook: Setting Up Your AI Agent in 3 Minutes — a 4-step FLOP CLI 0.5.0 setup walkthrough with screenshots ahead of the targeted November 24 testnet (with follow-up resource links including Wallet & Channel Doctor in a [reply](https://x.com/tatthang/status/2122495469205287259)). |
 | 2026-11-11 | [link](https://x.com/tatthang/status/2120504011728331072) | Devnet channel breakdown after 8 days (25,203 opened, 7,052 settled / 28%, 18,151 timed out, refunded, or still open), explaining silent auto-refunds and 404 on-chain locks, alongside releasing the read-only [FLOP Wallet & Channel Doctor](https://flop-doctor.vercel.app/). |
 | 2026-11-03 | [link](https://x.com/tatthang/status/2117547103933108529) | End-to-end public devnet sandbox check: laptop CLI and public MCP setup without Docker, faucet downtime blocking API-key activation, and hosted gateway sessions logging 211 of 310 runs under one shared account. |
