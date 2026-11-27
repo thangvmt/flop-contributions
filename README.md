@@ -4,13 +4,13 @@ A dated index of what I have contributed around [FLOP](https://flop.finance) and
 
 I am [@tatthang](https://x.com/tatthang) on X and [thangvmt](https://github.com/thangvmt) on GitHub. This is a personal record. It is not affiliated with or endorsed by Flop Labs, and nothing in it is a claim about rewards or eligibility.
 
-All dates are UTC; statuses checked on **2026-11-21**. Issues move, so the link is the source of truth.
+All dates are UTC; statuses checked on **2026-11-27**. Issues move, so the link is the source of truth.
 
 ## Specification feedback: `flop-labs/yellowpaper`
 
 | Opened | Item | Status | What it is |
 |---|---|---|---|
-| 2026-10-19 | [#172](https://github.com/flop-labs/yellowpaper/issues/172) | open | Reports a settled devnet gateway session whose channel agent differed from the enrolled wallet, and asks which account receives R8.4 credit. Added a devnet [follow-up](https://github.com/flop-labs/yellowpaper/issues/172#issuecomment-6386084425) on 2026-10-24 verifying a self-funded direct channel and asking how an independent agent locates a miner endpoint (`31` comments as of 2026-11-21). |
+| 2026-10-19 | [#172](https://github.com/flop-labs/yellowpaper/issues/172) | open | Reports a settled devnet gateway session whose channel agent differed from the enrolled wallet, and asks which account receives R8.4 credit. Added a devnet [follow-up](https://github.com/flop-labs/yellowpaper/issues/172#issuecomment-6386084425) on 2026-10-24 verifying a self-funded direct channel and asking how an independent agent locates a miner endpoint (`37` comments as of 2026-11-27). |
 | 2026-10-19 | [#171](https://github.com/flop-labs/yellowpaper/issues/171) | closed (completed) | The docs FAQ said nothing is burned anywhere, while Appendix A and the devnet runtime burned 10% of the inclusion fee. The hosted Yellow Paper has since adopted zero burn (D-0529), as other contributors noted on the thread. Closed on 2026-10-26: the 0.5.0 (draft) sync sets the fee burn to 0% and the validator page was corrected. |
 | 2026-10-07 | [#128](https://github.com/flop-labs/yellowpaper/issues/128) | open | The validator hardware profile in §15.3 and on the testnet page disagree (RAM, ECC, storage floor). Subsequent comments quantified the RAM discrepancy (`2x`) and noted a third hardware profile in `run-validator` (2026-11-04). |
 
@@ -18,6 +18,11 @@ All dates are UTC; statuses checked on **2026-11-21**. Issues move, so the link 
 
 | Opened | Item | Status | What it is |
 |---|---|---|---|
+| 2026-11-27 | [#1785](https://github.com/flop-labs/network/issues/1785) | open | Asks which amount of a settled Testnet channel earns an agent voucher: the gross settlement, the miner payout, or an amount based on measured compute. Two public Testnet settlements with the same 0.05 FLOP escrow and 0.0425 FLOP miner payout carried different aggregate G_n (5,504 and 4,543). Also asks which account FLOP Chat credits for a gateway-funded settlement. |
+| 2026-11-27 | [#1709](https://github.com/flop-labs/network/issues/1709) | open | CLI 0.10.2 `session run --new-wallet` on Testnet accepts `--max-flop 10` with no headroom for fees or the existential deposit after a 10 FLOP faucet claim, and its balance preflight converts with `float * 1e18` against the best head. Independently [confirmed](https://github.com/flop-labs/network/issues/1709#issuecomment-7209311368) on CLI 0.10.3 by another contributor. |
+| 2026-11-25 | [#1427](https://github.com/flop-labs/network/issues/1427) | open | SDK `runDirectSession` escrows `maxFlop` before any tariff check, while `LongSession.buy` checks the model price first. Independently reproduced against SDK 0.12.0 by another contributor. |
+| 2026-11-25 | [#1288](https://github.com/flop-labs/network/issues/1288) | open | Python `flop-sdk` 0.3.6: `x402_fetch` locks an HTLC, then fails on `HtlcInfo.get()`, and the retry proof omits `tx_hash`. |
+| 2026-11-25 | [#1233](https://github.com/flop-labs/network/issues/1233) | open | CLI `DirectBackend.costProblem` compares `worstCaseTurnGn` (G_n) directly with `--max-channel-flop` (FLOP atoms), so some over-cap turns miss the expected HTTP 400. |
 | 2026-11-21 | [#498](https://github.com/flop-labs/network/issues/498) | open | Flags a discrepancy between two 2026-11-18 docs FAQs on builder rewards: the Technology FAQ states there is no grants programme or token allocation for builders, while the Tokenomics FAQ describes discretionary buckets for demand-bringing connectors and an ecosystem reserve covering builder programmes. |
 
 ## Service and protocol: `flop-labs/technocore-chat` and `flop-labs/tclk`
